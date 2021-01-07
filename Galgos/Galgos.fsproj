@@ -8,6 +8,7 @@
     <Compile Include="Utils.fs" />
     <Compile Include="Sum.fs" />
     <Compile Include="PrefixSum.fs" />
+    <Compile Include="ParticleInteraction.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />

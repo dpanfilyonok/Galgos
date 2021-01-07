@@ -1,0 +1,33 @@
+{
+    "Brahma OpenCL": {
+        "prefix": "s_opencl",
+        "body": [
+            "// Устанавливаем глобальный и локальный размер\r",
+            "let localSize = \r",
+            "    [\r",
+            "        256\r",
+            "        (Cl.GetDeviceInfo(context.Device, DeviceInfo.MaxWorkGroupSize) |> fst).CastTo<int>()\r",
+            "    ] |> List.min\r",
+            "let globalSize = localSize\r",
+            "\r",
+            "// Описываем кернел\r",
+            "let kernel = \r",
+            "    <@\r",
+            "        ()\r",
+            "    @>\r",
+            "\r",
+            "// Описываем входные данные для кернела\r",
+            "\r",
+            "\r",
+            "// Описываем ndRange и binder\r",
+            "\r",
+            "\r",
+            "// Запускаем вычисления\r",
+            "opencl {\r",
+            "    do! RunCommand kernel binder\r",
+            "}"
+        ],
+        "description": "Simple OpenCL structural template",
+        "scope": "fsharp"
+    }
+}
