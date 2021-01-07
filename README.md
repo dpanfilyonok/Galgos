@@ -1,2 +1,2 @@
 # Galgos
-Basic algorithms on GPU
+Simple algorithms on GPU using OpenCL

@@ -1,17 +1,12 @@
-module Galgos
+module Sum 
 
 open Brahma.FSharp.OpenCL.WorkflowBuilder.Evaluation
 open Brahma.FSharp.OpenCL.WorkflowBuilder.Basic
 open Brahma.OpenCL
 open OpenCL.Net
+open Utils
 
-let getMultipleSize originalSize multiplicity = 
-    if originalSize % multiplicity = 0 then 
-        originalSize
-    else 
-        (originalSize / multiplicity + 1) * multiplicity
-
-let sum (context: OpenCLEvaluationContext) (array: int[]) = 
+let sumOfArray (context: OpenCLEvaluationContext) (array: int[]) = 
     let localSize = 
         [
             256
@@ -37,7 +32,7 @@ let sum (context: OpenCLEvaluationContext) (array: int[]) =
 
                 let mutable amountOfValuesToSum = localSize
                 while amountOfValuesToSum > 1 do 
-                    if 2 * localId < amountOfValuesToSum then
+                    if localId * 2 < amountOfValuesToSum then
                         let a = localBuffer.[localId]
                         let b = localBuffer.[localId + amountOfValuesToSum / 2]
                         localBuffer.[localId] <- a + b

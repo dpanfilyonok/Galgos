@@ -1,11 +1,14 @@
-open System
-
 open Brahma.FSharp.OpenCL.WorkflowBuilder.Evaluation
 open OpenCL.Net
-open Galgos
+open Brahma.FSharp.OpenCL.WorkflowBuilder.Evaluation
+open Brahma.FSharp.OpenCL.WorkflowBuilder.Basic
+open Brahma.OpenCL
+open OpenCL.Net
+open Sum
+open PrefixSum
 
 [<EntryPoint>]
 let main argv =
     let context = OpenCLEvaluationContext("INTEL*", DeviceType.Cpu)
-    printfn "%i" <| sum context (Array.init 5 id)
+    printfn "%A" <| prefixSum context (Array.init 512 id) 
     0

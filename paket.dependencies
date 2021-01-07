@@ -2,3 +2,7 @@ source https://api.nuget.org/v3/index.json
 
 storage: none
 nuget Brahma.FSharp.OpenCL.WorkflowBuilder
+
+nuget Expecto
+nuget YoloDev.Expecto.TestSdk
+nuget Microsoft.NET.Test.Sdk
