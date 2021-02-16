@@ -14,7 +14,7 @@ let filter (context: OpenCLEvaluationContext) (array: int[]) (predicate: Expr<in
             256
             (Cl.GetDeviceInfo(context.Device, DeviceInfo.MaxWorkGroupSize) |> fst).CastTo<int>()
         ] |> List.min
-    let globalSize = getMultipleSize array.Length localSize
+    let globalSize = getMultipleSize localSize array.Length
     let groupCount = globalSize / localSize
     let filteredArraySize = globalSize / 4
 

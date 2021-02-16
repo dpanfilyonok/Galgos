@@ -15,7 +15,7 @@ let particleInteraction (context: OpenCLEvaluationContext) (particlesArray: int[
             256
             (Cl.GetDeviceInfo(context.Device, DeviceInfo.MaxWorkGroupSize) |> fst).CastTo<int>()
         ] |> List.min
-    let globalSize = getMultipleSize particlesArray.Length localSize
+    let globalSize = getMultipleSize localSize particlesArray.Length 
 
     let resizedArray = Array.zeroCreate globalSize
     Array.blit particlesArray 0 resizedArray 0 particlesArray.Length

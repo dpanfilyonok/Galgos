@@ -10,6 +10,8 @@
     <Compile Include="PrefixSum.fs" />
     <Compile Include="ParticleInteraction.fs" />
     <Compile Include="Filter.fs" />
+    <Compile Include="MatrixTranspose.fs" />
+    <Compile Include="MergeSorted.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />

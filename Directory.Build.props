@@ -1,0 +1,5 @@
+<Project>
+    <PropertyGroup>
+        <DisableFody>true</DisableFody>
+    </PropertyGroup>
+</Project>
